@@ -17,7 +17,7 @@ cd $PBS_O_WORKDIR
 #list all left reads separated by commas, NOT space, then list right reads in the same way.
 #output directory name must include 'trinity'
 #sample line: 
-#sh runTrinity.sh left1.fastq,left2.fastq,left3.fastq right1.fastq,right2.fastq,right3.fastq trinity_sample_out
+#bash runTrinity.sh left1.fastq,left2.fastq,left3.fastq right1.fastq,right2.fastq,right3.fastq trinity_sample_out
 bash runTrinity.sh <left reads fastq file> <right reads fastq file> <output dir name>
 
 
