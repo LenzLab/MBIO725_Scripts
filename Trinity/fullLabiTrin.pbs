@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=16,walltime=200:00:00
+#PBS -l vmem=300gb
+#PBS -m abe
+#PBS -N LabidoceraAssem
+##PBS -j oe
+##PBS -k o
+
+module load java/1.7.0_51
+module load bowtie/0.12.8
+module load samtools/1.2
+module load trinityrnaseq/2.0.6
+
+
+cd $PBS_O_WORKDIR
+
+#list all left reads separated by commas, NOT space, then list right reads in the same way.
+#output directory name must include 'trinity'
+#sample line: 
+#bash runTrinity.sh left1.fastq,left2.fastq,left3.fastq right1.fastq,right2.fastq,right3.fastq trinity_sample_out
+bash runTrinity.sh 127495-1_S1_L001_R1_001.fastq.gz,127495-2_S2_L001_R1_001.fastq.gz,127495-3_S3_L001_R1_001.fastq.gz,127495-4_S4_L001_R1_001.fastq.gz,127495-5_S5_L001_R1_001.fastq.gz,127495-6_S6_L001_R1_001.fastq.gz 127495-1_S1_L001_R2_001.fastq.gz,127495-2_S2_L001_R2_001.fastq.gz,127495-3_S3_L001_R2_001.fastq.gz,127495-4_S4_L001_R2_001.fastq.gz,127495-5_S5_L001_R2_001.fastq.gz,127495-6_S6_L001_R2_001.fastq.gz ../trinity_out_dir
+
+
